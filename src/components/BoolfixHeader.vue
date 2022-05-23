@@ -1,21 +1,21 @@
 <template>
-  <div class="header_container">
+  <header>
       <div class="header_logo_container">BoolFix</div>
       <div class="search_and_button_header">
           <input type="text" name="" id="">
           <button>Cerca</button>
       </div>
-  </div>
+  </header>
 </template>
 
 <script>
 export default {
-    name: "BoolfixHeader"
+    name: "BoolfixHeader",
 }
 </script>
 
 <style lang="scss" scoped>
-    div.header_container {
+    header {
         background-color: black;
         color: white;
         display: flex;
