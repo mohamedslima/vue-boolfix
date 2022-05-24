@@ -1,6 +1,6 @@
 <template>
   <div class="boolfix_card_layout">
-      <div>{{ feature.title }}</div>
+      <div>{{ feature.title }} {{ feature.name }}</div>
       <div>{{ feature.original_title }}</div>
       <div>
           <FlagIcons :langCode="feature.original_language"/>
