@@ -20,6 +20,7 @@ export default {
     div.boolfix_card_layout {
         margin-top: 1rem;
         width: 280px;
+        display: flex;
         background-color: rgba(0, 0, 0, 0.039);
     }
 </style>
