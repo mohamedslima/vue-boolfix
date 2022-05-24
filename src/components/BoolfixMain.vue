@@ -30,7 +30,6 @@ export default {
                 params: {
                     api_key: "b7b84da696134b3b85d999dbf952ff89",
                     lang: "en-US",
-                    page: 1,
                     query: searchedFilm,
             },
             })
