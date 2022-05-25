@@ -13,7 +13,15 @@
       <FlagIcons :langCode="feature.original_language" />
     </div>
     <div>
-      <span>{{ feature.vote_average }}</span>
+      voto:
+      <span>
+        <i
+          v-for="(item, index) in 5"
+          :key="index"
+          class="fa-star"
+          :class="index <= filledStars() ? 'fas' : 'far'"
+        ></i>
+      </span>
     </div>
   </div>
 </template>
@@ -29,7 +37,11 @@ export default {
   props: {
     feature: Object,
   },
-  methods: {},
+  methods: {
+    filledStars() {
+      return Math.ceil(this.feature.vote_average / 2);
+    },
+  },
 };
 </script>
 

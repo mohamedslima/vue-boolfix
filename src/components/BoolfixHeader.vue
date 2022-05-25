@@ -1,6 +1,6 @@
 <template>
   <header>
-      <div class="header_logo_container">BOOLFLIX</div>
+      <img src="../assets/momoflix.png" alt="">
   </header>
 </template>
 
