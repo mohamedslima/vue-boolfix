@@ -23,8 +23,10 @@ export default {
           return "es";
         case "uk":
           return "ua";
-          default:
-              return "unknown";
+        case "be":
+          return "be";
+        default:
+          return "unknown";
       }
     },
   },
