@@ -1,17 +1,21 @@
 <template>
   <div class="boolfix_card_layout">
-    <div class="image_container">
-      <img
-        v-if="feature.poster_path !== null"
-        :src="`https://www.themoviedb.org/t/p/w342${feature.poster_path}`"
-        alt=""
-      />
-    </div>
+    <img
+      v-if="feature.poster_path !== null"
+      :src="`https://www.themoviedb.org/t/p/w342${feature.poster_path}`"
+      alt=""
+    />
+    <img v-else src="../assets/No_image_available.svg.png" alt="" />
     <div class="text_container">
-      <div>{{ feature.title }} {{ feature.name }}</div>
-      <div>{{ feature.original_title }} {{ feature.original_name }}</div>
-      <div>
-        <FlagIcons :langCode="feature.original_language" />
+      <div class="film_title">
+        TITOLO: {{ feature.title }} {{ feature.name }}
+      </div>
+      <div class="film_original_title">
+        TITOLO ORIGINALE: {{ feature.original_title }}
+        {{ feature.original_name }}
+      </div>
+      <div class="nation_production">
+        Paese di produzione: <FlagIcons :langCode="feature.original_language" />
       </div>
       <div>
         voto:
@@ -53,21 +57,39 @@ div.boolfix_card_layout {
   text-align: center;
   border: 1px solid lightgray;
   color: white;
-    div.image_container {
-      width: 300px;
-      height: 500px;
-      img {
-        height: 100%;
-        width: 100%;
-      }
-    }
-  div.text_container {
-    div {
-      span {
-        i.fa-star {
-          color: gold;
-        }
-      }
+  position: relative;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+div.boolfix_card_layout:hover div.text_container {
+  display: block;
+}
+div.text_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.658);
+  height: 100%;
+  width: 100%;
+  display: none;
+  padding-top: 2.5rem;
+  div.film_title {
+    font-size: 1.5rem;
+  }
+  div.film_original_title {
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+  div.nation_production {
+    padding: 1rem 0;
+  }
+}
+div {
+  span {
+    i.fa-star {
+      color: gold;
     }
   }
 }
