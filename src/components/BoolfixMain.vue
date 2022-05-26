@@ -1,21 +1,23 @@
 <template>
   <main>
     <BoolfixMainButton @clickedSearch="searchMovie($event)" />
-    <h2>film</h2>
-    <div class="boolfix_layout">
-      <BoolfixFilmCard
-        v-for="(item, index) in movieList"
-        :key="index"
-        :feature="item"
-      />
-    </div>
-    <h2>serie tv</h2>
-    <div class="boolfix_layout">
-      <BoolfixFilmCard
-        v-for="(item, index) in seriesList"
-        :key="index"
-        :feature="item"
-      />
+    <div class="main_container">
+      <h2>FILM</h2>
+      <div class="boolfix_layout">
+        <BoolfixFilmCard
+          v-for="(item, index) in movieList"
+          :key="index"
+          :feature="item"
+        />
+      </div>
+      <h2>Serie TV</h2>
+      <div class="boolfix_layout">
+        <BoolfixFilmCard
+          v-for="(item, index) in seriesList"
+          :key="index"
+          :feature="item"
+        />
+      </div>
     </div>
   </main>
 </template>
@@ -62,11 +64,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div.boolfix_layout {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  width: 90%;
-  margin: 0 auto;
+main {
+  div.main_container {
+    background-color: #434343;
+    height: 100%;
+    h2 {
+      color: white;
+      text-align: center;
+      padding: 3rem 0;
+    }
+    div.boolfix_layout {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
 }
 </style>

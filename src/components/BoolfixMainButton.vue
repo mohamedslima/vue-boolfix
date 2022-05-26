@@ -29,6 +29,7 @@ export default {
         background-color: black;
         text-align: right;
         padding: 0 1rem 1rem;
+        height: 80px;
         input {
             width: 12rem;
             height: 2rem;
@@ -40,6 +41,7 @@ export default {
             background-color: $general-boolfix-red-color;
             border: 2px solid $general-boolfix-border-color;
             cursor: pointer;
+            color: white;
         }
     }
 </style>

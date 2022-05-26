@@ -7,21 +7,23 @@
         alt=""
       />
     </div>
-    <div>{{ feature.title }} {{ feature.name }}</div>
-    <div>{{ feature.original_title }} {{ feature.original_name }}</div>
-    <div>
-      <FlagIcons :langCode="feature.original_language" />
-    </div>
-    <div>
-      voto:
-      <span>
-        <i
-          v-for="(item, index) in 5"
-          :key="index"
-          class="fa-star"
-          :class="index <= filledStars() ? 'fas' : 'far'"
-        ></i>
-      </span>
+    <div class="text_container">
+      <div>{{ feature.title }} {{ feature.name }}</div>
+      <div>{{ feature.original_title }} {{ feature.original_name }}</div>
+      <div>
+        <FlagIcons :langCode="feature.original_language" />
+      </div>
+      <div>
+        voto:
+        <span>
+          <i
+            v-for="(item, index) in 5"
+            :key="index"
+            class="fa-star"
+            :class="index <= filledStars() ? 'fas' : 'far'"
+          ></i>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -47,13 +49,25 @@ export default {
 
 <style lang="scss" scoped>
 div.boolfix_card_layout {
-  width: 300px;
-  margin-top: 1rem;
-  background-color: rgba(0, 0, 0, 0.039);
+  margin-top: 1.5rem;
   text-align: center;
-  div.image_container {
-    img {
-      width: 240px;
+  border: 1px solid lightgray;
+  color: white;
+    div.image_container {
+      width: 300px;
+      height: 500px;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  div.text_container {
+    div {
+      span {
+        i.fa-star {
+          color: gold;
+        }
+      }
     }
   }
 }
