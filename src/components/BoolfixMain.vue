@@ -37,6 +37,7 @@ export default {
     return {
       movieList: [],
       seriesList: [],
+      castList: [],
     };
   },
   methods: {
@@ -57,6 +58,12 @@ export default {
         .get("https://api.themoviedb.org/3/search/tv", { params })
         .then((resp) => {
           this.seriesList = resp.data.results;
+        });
+
+        axios
+        .get(`https://api.themoviedb.org/3/movie/${feature.id}/credits`, { params })
+        .then((resp) => {
+          this.castList = resp.data.results;
         });
     },
   },

@@ -53,6 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 div.boolfix_card_layout {
+  width: 22%;
   margin-top: 1.5rem;
   text-align: center;
   border: 1px solid lightgray;
